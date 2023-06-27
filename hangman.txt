@@ -1,0 +1,33 @@
+import random
+word_stack=["apple","hyderabad","mumbai","bangalore","calcutta"]
+chosen_word=random.choice(word_stack)
+print("_ "*len(chosen_word))
+lives = 10
+a = len(chosen_word)
+b = []
+c = 1
+d = list(chosen_word)
+e = 0
+for j in range(a):
+    b.append("_")
+while lives > 0:
+    guessed_letter = input("guess a letter: ").lower()  # p _pp__
+    e = 0
+    for i in range(a):
+        e+=1
+        if guessed_letter == chosen_word[i]:
+            b[i] = guessed_letter
+            c = 0
+        elif (e == a):
+            lives = lives - 1
+    print(b)
+    if d == b:
+        print("you win")
+        lives = 0
+    else:
+        pass
+
+if lives==0:
+    print("you lose")
+elif (lives > 0):
+    pass
